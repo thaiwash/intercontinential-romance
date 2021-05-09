@@ -39,22 +39,25 @@ app.get('/get_reply', (req, res) => {
     var ret = reply+""
     reply = ""
     res.send(ret)
+    return;
   }
   res.send('OK')
 })
 
 //take command from queue
 app.get('/get_command', (req, res) => {
+  //console.log
   if(command.length > 0) {
     console.log("Command '"+command+ "' was given")
     var ret = command+""
     command = ""
     res.send(ret)
+    return;
   }
   res.send('OK')
 })
 
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Africa server listening at http://localhost:${port}`)
 })

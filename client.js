@@ -13,7 +13,9 @@ var options = {
 var interval = setInterval(function() {
   http.get(options, function(res) {
     console.log("Got response: " + res.statusCode);
+    console.log(res.statusMessage);
   }).on('error', function(e) {
     console.log("Got error: " + e.message);
   });
+  clearInterval(interval)
 }, 1000)
